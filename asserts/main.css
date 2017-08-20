@@ -41,7 +41,7 @@ body {
 
 .nav {
     width: 1000px;
-    margin: 270px auto 0;
+    margin: 370px auto 0;
     font-size: 50px;
     text-align: center;
 }
@@ -50,12 +50,12 @@ body {
     margin: 0 10px;
 }
 .nav a {
-    color: #BE8A60;
+    color: #ccc;
     text-decoration: none;
     font-weight: bold;
 }
 .nav a:hover {
-    color: #b1794b;
+    color: #bbb;
 }
 
 .descrition {
@@ -68,7 +68,7 @@ body {
 
 .title {
     position: absolute;
-    top: 430px;
+    top: 306px;
     left: 50%;
     color: #fff;
     font-size: 140px;
