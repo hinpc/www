@@ -1,0 +1,105 @@
+@import './base.less';
+
+body {
+  background-color: #9f9594;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.fixed-content {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+  color: #fff;
+
+  .title {
+    display: inline-block;
+    font-size: 16px;
+    height: 48px;
+    padding: 2px 0 2px 10px;
+    vertical-align: middle;
+    border-left: 2px solid #fff;
+    opacity: 0.9;
+
+    h1 {
+      font-size: 32px;
+    }
+  }
+
+  .nav {
+    list-style: none;
+    li {
+      display: inline-block;
+      a {
+        color: #fff;
+        margin-right: 14px;
+        text-decoration: none;
+        opacity: 0.8;
+        &:hover {
+          opacity: 1;
+        }
+        &.through:hover {
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
+
+#logo {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  text-indent: -999em;
+  background: url('../img/hi-logo-white.v17.8.png') center no-repeat;
+  background-size: 100%;
+  vertical-align: middle;
+}
+
+.bg-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+.bg-wrap::after {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/Lake-Bled-with-the-church.opt.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top right;
+  animation: 20s zoom-in linear infinite;
+  z-index: -1;
+}
+
+#footer {
+  color: #ccc;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  opacity: 0.8;
+  font-size: 12px;
+}
+#footer p {
+  margin-bottom: 10px;
+}
+#footer a {
+  color: #ccc;
+}
+#footer a img {
+  opacity: 0.5;
+}
+
+@keyframes zoom-in {
+  0%, 100% { transform: scale(1.0); }
+  50% { transform: scale(1.05); }
+}
