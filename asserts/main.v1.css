@@ -11,8 +11,9 @@ body {
 
 .fixed-content {
     position: fixed;
-    left: 20%;
-    bottom: 16%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
     color: #fff;
 }
 
