@@ -55,16 +55,19 @@ gulp.task('buildJs', function() {
 });
 
 gulp.task('rev', function() {
-  return setTimeout(function() {
-    return gulp.src([path.join(revPath, '*.json'), './index.html'])
-    .pipe(revCollector())
-    .pipe(gulp.dest('./dist'))
-  }, 100);
+  return gulp.src([path.join(revPath, '*.json'), './index.html'])
+  .pipe(revCollector())
+  .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('movefile', function() {
+  gulp.src('./CNAME').pipe(gulp.dest('./dist'));
 });
 
 gulp.task('default', function() {
   runSequence(
     [ 'clean', 'less', 'buildJs', 'imagemin' ],
-    'rev'  // 必须等前面执行完毕
+    'rev',  // 必须等前面执行完毕
+    'movefile'
   );
 });
