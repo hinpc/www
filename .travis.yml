@@ -1,6 +1,16 @@
 language: node_js
 node_js: stable
 
-script:
+install:
   - npm install
+script:
   - npm run build
+
+after_success:
+  - git config --global user.name "Gallen.Hu"
+  - git config --global user.email "gallenhu@foxmail.com"
+  - cd ./dist
+  - git init
+  - git add -A
+  - git commit -m "Travis CI Auto Builder"
+  - git push --quiet --force ${REPO_TOKEN}@https://github.com/Hinpc/www.git gh-pages
