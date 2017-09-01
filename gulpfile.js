@@ -10,12 +10,12 @@ var rev = require('gulp-rev');
 var revCollector = require('gulp-rev-collector');
 var revReplace = require('gulp-rev-replace');
 
-var lessFiles = 'src/style/main.less';
-var jsFiles = 'src/js/**.js'
-var imgs = 'src/img/*';
-var distCss = 'dist/css';
-var distJs = 'dist/js';
-var distImg = 'dist/img';
+var lessFiles = 'asserts/css/main.less';
+var jsFiles = 'asserts/js/**.js'
+var imgs = 'asserts/img/*';
+var distCss = 'dist/asserts/css';
+var distJs = 'dist/asserts/js';
+var distImg = 'dist/asserts/img';
 var revPath = 'dist/rev';
 
 gulp.task('clean', function() {
@@ -56,9 +56,9 @@ gulp.task('buildJs', function() {
 
 gulp.task('rev', function() {
   return setTimeout(function() {
-    return gulp.src([path.join(revPath, '*.json'), './src/index.html'])
+    return gulp.src([path.join(revPath, '*.json'), './index.html'])
     .pipe(revCollector())
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./dist'))
   }, 100);
 });
 
