@@ -62,6 +62,7 @@ gulp.task('rev', function() {
 
 gulp.task('movefile', function() {
   gulp.src('./CNAME').pipe(gulp.dest('./dist'));
+  gulp.src('./MP_verify_WmEzIxvWXlgnzvPj.txt').pipe(gulp.dest('./dist'));
 });
 
 gulp.task('default', function() {
